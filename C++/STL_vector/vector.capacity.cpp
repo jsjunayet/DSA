@@ -5,6 +5,9 @@ int main (){
     cout<<v.capacity()<<endl;
     v.push_back(20);
     v.push_back(30);
+    v.push_back(30);
+    v.push_back(30);
+v.clear();
     int j =0;
     while (j<v.size())
     {
@@ -13,7 +16,7 @@ int main (){
               j++;
     }
     cout<<endl;
-        cout<<v.capacity()<<endl;
+        cout<<v.size  ()<<endl;
 
     int i=0;
     if(!v.empty())
