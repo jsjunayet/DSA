@@ -1,28 +1,64 @@
 #include<bits/stdc++.h>
 using namespace std;
-class node{
-    public:
+
+// Node ক্লাস তৈরি
+class node {
+public:
     int val;
-    node*next;
-    node(int val){
-        this->val=val;
-        this->next=NULL;
-        
+    node* next;
+    node(int val) {
+        this->val = val;
+        this->next = NULL;
     }
 };
-void inser_at_tail(node *head, int v){
-    node *newHead = new node(v);
-    
+
+// লিঙ্কড লিস্টের টেইলে নতুন নোড যোগ করা
+void insert_at_tail(node*& head, int v) {
+    node* newNode = new node(v);
+    if (head == NULL) {  // যদি লিঙ্কড লিস্ট খালি থাকে
+        head = newNode;
+        return;
+    }
+    node* temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = newNode;
 }
-int main (){
-   node *head;
-    int n;
-   cout<<"option-1: please insert node : ";
-   cout<<"option-2: print you linked list: ";
-   cout<<"option-3: exit: ";
-   if(n==1){
-    int v;
-    cin>>v;
-    inser_at_tail(head,v);
-   }
+
+// লিঙ্কড লিস্ট প্রিন্ট করা
+void print_linked_list(node* head) {
+    node* temp = head;
+    while (temp != NULL) {
+        cout << temp->val << " -> ";
+        temp = temp->next;
+    }
+    cout << "NULL" << endl;
+}
+
+int main() {
+    node* head = NULL;  // লিঙ্কড লিস্টের হেড পয়েন্টার
+    while (true) {
+        cout << "Option 1: Insert a node at the tail\n";
+        cout << "Option 2: Print the linked list\n";
+        cout << "Option 3: Exit\n";
+        cout << "Enter your choice: ";
+        int n;
+        cin >> n;
+
+        if (n == 1) {
+            int v;
+            cout << "Enter value: ";
+            cin >> v;
+            insert_at_tail(head, v);
+        } else if (n == 2) {
+            print_linked_list(head);
+        } else if (n == 3) {
+            cout << "Exiting program..." << endl;
+            break;
+        } else {
+            cout << "Invalid option! Try again." << endl;
+        }
+    }
+    return 0;
 }
