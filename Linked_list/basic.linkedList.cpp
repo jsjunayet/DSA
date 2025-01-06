@@ -12,10 +12,10 @@ public:
     }
 };
 
-// লিঙ্কড লিস্টের টেইলে নতুন নোড যোগ করা
+
 void insert_at_tail(node*& head, int v) {
     node* newNode = new node(v);
-    if (head == NULL) {  // যদি লিঙ্কড লিস্ট খালি থাকে
+    if (head == NULL) {  
         head = newNode;
         return;
     }
@@ -35,13 +35,20 @@ void print_linked_list(node* head) {
     }
     cout << "NULL" << endl;
 }
+void inser_any_position(node *head, int postion, int value){
+    node *newHead = new node(value);
+    
+
+}
+
 
 int main() {
     node* head = NULL;  // লিঙ্কড লিস্টের হেড পয়েন্টার
     while (true) {
         cout << "Option 1: Insert a node at the tail\n";
         cout << "Option 2: Print the linked list\n";
-        cout << "Option 3: Exit\n";
+        cout << "Option 3: Inser any position \n";
+        cout << "Option 4: Exit\n";
         cout << "Enter your choice: ";
         int n;
         cin >> n;
@@ -53,7 +60,13 @@ int main() {
             insert_at_tail(head, v);
         } else if (n == 2) {
             print_linked_list(head);
-        } else if (n == 3) {
+        } else if (n==3){
+            int postion,value;
+            cin>>postion>>value;
+            inser_any_position(head, postion, value);
+
+        }
+         else if (n == 4) {
             cout << "Exiting program..." << endl;
             break;
         } else {
