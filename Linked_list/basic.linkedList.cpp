@@ -7,13 +7,22 @@ class node{
     node(int val){
         this->val=val;
         this->next=NULL;
+        
     }
 };
+void inser_at_tail(node *head, int v){
+    node *newHead = new node(v);
+    
+}
 int main (){
-    node a(10);
-    node b(20);
-    a.next=&b;
-    cout<<a.val<<endl;
-    cout<<a.next->val<<endl;
-    return 0;
+   node *head;
+    int n;
+   cout<<"option-1: please insert node : ";
+   cout<<"option-2: print you linked list: ";
+   cout<<"option-3: exit: ";
+   if(n==1){
+    int v;
+    cin>>v;
+    inser_at_tail(head,v);
+   }
 }
