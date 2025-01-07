@@ -37,6 +37,12 @@ void print_linked_list(node* head) {
 }
 void inser_any_position(node *head, int postion, int value){
     node *newHead = new node(value);
+    node *temp = head;
+    for(int i =1; i<=postion-1; i++){
+        temp = temp->next;
+    }
+    newHead->next = temp->next;
+    temp->next=newHead;
     
 
 }
@@ -69,6 +75,8 @@ int main() {
          else if (n == 4) {
             cout << "Exiting program..." << endl;
             break;
+        } else if(n==5) {
+            cout << "Invalid option! Try again." << endl;
         } else {
             cout << "Invalid option! Try again." << endl;
         }
