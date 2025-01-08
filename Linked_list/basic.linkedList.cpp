@@ -77,7 +77,10 @@ int main() {
             break;
         } else if(n==5) {
             cout << "Invalid option! Try again." << endl;
-        } else {
+        }else if(n==5) {
+            cout << "Invalid option! Try again." << endl;
+        }
+         else {
             cout << "Invalid option! Try again." << endl;
         }
     }
