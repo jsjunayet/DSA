@@ -13,8 +13,8 @@ int main (){
         mat[b][a]=1;
 
     }
-    if(mat[3][4]==1) cout<<"connected node";
-    else cout<<"disconnected node";
+    if(mat[3][4]==1) cout<<"connected node"<<endl;
+    else cout<<"disconnected node"<<endl;
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
             cout<<mat[i][j];
